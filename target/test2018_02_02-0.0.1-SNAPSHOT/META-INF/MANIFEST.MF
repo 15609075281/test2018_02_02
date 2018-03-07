@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: test2018_02_02
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Administrator
+Implementation-Vendor-Id: com.example
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_05
+Main-Class: ${start-class}
+

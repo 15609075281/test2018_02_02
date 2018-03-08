@@ -2,9 +2,11 @@ package com.example.demo.Contoller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.example.demo.Entity.BannerEntity;
 import com.example.demo.Entity.HomeEntity;
 import com.example.demo.Entity.RustleEntity;
 import com.example.demo.Entity.RustleListEntity;
+import com.example.demo.JPA.BannerJpa;
 import com.example.demo.JPA.HomeJpa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +26,7 @@ public class HomeContoller {
     @Autowired
     private HomeJpa homeJpa;
 
+
     @RequestMapping(value = "/home")
     public JSON home(HomeEntity homeEntity, HttpServletRequest httpServletRequest) {
         System.out.println("进出home");
@@ -35,7 +38,7 @@ public class HomeContoller {
         rustleEntity.setResult("成功");
         //第二层，集合
         List<RustleListEntity> jsonList = new ArrayList<>();
-        String[] title = new String[]{"最近新品", "限时优惠", "不老神话", "独家精品","独家精品","独家精品","独家精品","独家精品"};
+        String[] title = new String[]{"最近新品", "限时优惠", "不老神话", "独家精品", "独家精品", "独家精品", "独家精品", "独家精品"};
         for (int i = 0; i < title.length; i++) {
             RustleListEntity rustleListEntity = new RustleListEntity();
             rustleListEntity.setId(i + "");
@@ -48,4 +51,7 @@ public class HomeContoller {
 //        rustleEntity.setUrl_image((JSON) JSONObject.toJSON(homeEntityList));
         return (JSON) JSONObject.toJSON(rustleEntity);
     }
+
+
+
 }
